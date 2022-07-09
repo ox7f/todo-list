@@ -1,16 +1,24 @@
-import React from "react";
+import React from 'react';
 
-import { StoryHeader } from "./Header";
+import { Header } from './Header';
 
 export default {
-    title: "UI/Header",
-    component: StoryHeader,
-    parameters: {
-        // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-        layout: "fullscreen",
-    },
+  title: 'Example/Header',
+  component: Header,
+  parameters: {
+    // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
+    layout: 'fullscreen',
+  },
 };
 
-const Template = (args) => <StoryHeader {...args} />;
+const Template = (args) => <Header {...args} />;
 
-export const Default = Template.bind({});
+export const LoggedIn = Template.bind({});
+LoggedIn.args = {
+  user: {
+    name: 'Jane Doe',
+  },
+};
+
+export const LoggedOut = Template.bind({});
+LoggedOut.args = {};
