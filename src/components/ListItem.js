@@ -1,4 +1,6 @@
-const ListItem = ({ item }) => {
+const ListItem = ({
+    item
+}) => {
     return (
         <div>
             TODO: ListItem darstellen

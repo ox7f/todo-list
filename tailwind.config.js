@@ -3,11 +3,9 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 module.exports = {
     content: ["node_modules/daisyui/dist/**/*.js"],
     plugins: [require("daisyui")],
-    safelist: [
-        {
-            pattern: /./
-        },
-    ],
+    safelist: [{
+        pattern: /./
+    }, ],
     theme: {
         extend: {
             fontFamily: {

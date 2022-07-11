@@ -1,4 +1,6 @@
-import { Footer as DaisyFooter } from "react-daisyui";
+import {
+    Footer as DaisyFooter
+} from "react-daisyui";
 
 const Footer = () => {
     return (
