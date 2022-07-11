@@ -7,6 +7,7 @@ const defaultTask = {
     id: uuid(),
     completed: false,
     description: "This is a my description.",
+    rating: 5,
     title: "Example",
 };
 
