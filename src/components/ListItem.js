@@ -1,7 +1,6 @@
 import {
     Avatar,
     Badge,
-    Button,
     Checkbox,
     Rating,
     Table
