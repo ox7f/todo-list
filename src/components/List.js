@@ -1,17 +1,39 @@
+import {
+    Checkbox,
+    Table
+} from "react-daisyui";
+
 import ListItem from "./ListItem";
 import useTasks from "../hooks/useTasks";
 
 const List = () => {
     const {
-        tasks
+        tasks,
+        updateTask
     } = useTasks();
 
     return (
-        <div> {
-            tasks?.map(
-                (task) => <ListItem item={task} key={task.id} />
-            )
-        } </div>
+        <div className="overflow-x-auto">
+            <Table className="rounded-box">
+                <Table.Head>
+                    <Checkbox />
+                    <span>Title</span>
+                    <span>Description</span>
+                    <span>Rating</span>
+                    <span>Completed</span>
+                </Table.Head>
+
+                <Table.Body>{
+                    tasks?.map(
+                        (task, index) => (
+                            <ListItem item={task} key={index} update={updateTask} />
+                        )
+                    )
+                }</Table.Body>
+
+                <Table.Footer></Table.Footer>
+            </Table>
+        </div>
     );
 }
 

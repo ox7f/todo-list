@@ -13,7 +13,8 @@ const defaultTask = {
     id: uuid(),
     completed: false,
     description: "This is a description.",
-    rating: 5,
+    rating: 2,
+    tag: ["example", "tag", "task"],
     title: "Example",
 };
 
@@ -22,6 +23,16 @@ export const TaskProvider = ({
 }) => {
     const [task, setTask] = useState({});
     const [tasks, setTasks] = useState([]);
+
+    const updateTask = (newTask) => {
+        let newTasks = tasks.map(task => {
+            if (task.id === newTask.id)
+                return newTask;
+            return task;
+        });
+
+        setTasks(newTasks);
+    }
 
     useEffect(() => {
         setTasks([defaultTask]);
@@ -33,7 +44,8 @@ export const TaskProvider = ({
                 task,
                 setTask,
                 tasks,
-                setTasks
+                setTasks,
+                updateTask
             }
         }> {
             children
