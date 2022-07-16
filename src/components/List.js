@@ -14,7 +14,7 @@ const List = () => {
 
     return (
         <div className="overflow-x-auto">
-            <Table className="rounded-box">
+            <Table className="rounded-box w-full">
                 <Table.Head>
                     <Checkbox />
                     <span>Title</span>
